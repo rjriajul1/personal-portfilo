@@ -11,3 +11,7 @@
   --color-secondary: ##7c87cf;
 
 }
+
+html {
+  scroll-behavior: smooth;
+}

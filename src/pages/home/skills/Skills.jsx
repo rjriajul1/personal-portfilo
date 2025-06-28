@@ -7,7 +7,7 @@ import { SiExpress, SiMongodb } from "react-icons/si";
 
 const Skills = () => {
   return (
-    <div className="max-w-[1500px] mx-auto">
+    <div id="skill" className="max-w-[1500px] mx-auto">
       <h1 className="text-4xl font-bold text-center text-green-700 mb-8">
         Skills
       </h1>

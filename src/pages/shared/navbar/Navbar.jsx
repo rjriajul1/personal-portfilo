@@ -5,7 +5,19 @@ const Navbar = () => {
   const links = (
     <>
       <li>
-        <NavLink className={({isActive})=> isActive ? ' underline': ''} to="/">Home</NavLink>
+        <NavLink  className={({isActive})=> isActive ? ' underline': ''} to="/">Home</NavLink>
+      </li>
+      <li>
+        <a href="#about">About Me</a>
+      </li>
+      <li>
+        <a href="#skill">Skill</a>
+      </li>
+      <li>
+        <a href="#project">Project</a>
+      </li>
+      <li>
+        <a href="#contact">Contact</a>
       </li>
       
     </>

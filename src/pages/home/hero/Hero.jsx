@@ -23,7 +23,7 @@ const Hero = () => {
             modern technologies. Let's work together to turn ideas into real
             digital experiences.
           </p>
-          <div className="flex gap-4 mb-3">
+          <div className="flex gap-4 mb-8 ml-2">
             <Link
               to="https://www.facebook.com/share/1JHcRoWsFS/"
               target="_blank"

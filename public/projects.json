@@ -1,0 +1,63 @@
+[
+  {
+    "id": 1,
+    "title": "FreelanceHub",
+    "image": "https://i.ibb.co/yzG8svv/Screenshot-2025-06-28-235531.png",
+    "description": "Welcome to the Freelance Marketplace Website – a platform that connects freelancers with clients worldwide. This project enables users to post jobs, hire talent, and manage freelance work easily and securely.",
+    "features": [
+      "Job posting and application system",
+      "Tracking and status updates",
+      "Review and rating system"
+    ],
+    "technologies": ["MongoDB", "Express.js", "React", "Tailwind CSS", "Firebase"],
+    "details": {
+      "techStack": ["MongoDB", "Express.js", "React", "Tailwind CSS", "Firebase"],
+      "longDescription": "FreelanceHub is a web application where clients can post jobs and freelancers can apply, track their work, and get feedback. It streamlines freelance workflows and helps build trust between users.",
+      "liveLink": "https://freelance-marketplace-46e7c.web.app/",
+      "clientRepo": "https://github.com/rjriajul1/freelance-marketPlac-client",
+      "serverRepo": "https://github.com/rjriajul1/freelance-marketPlace-server",
+      "challenges": "Managing user roles (client/freelancer) and implementing secure authentication with Firebase was challenging.",
+      "improvements": "Planning to add real-time chat, Stripe payment integration, and job recommendation system based on user skills."
+    }
+  },
+  {
+    "id": 2,
+    "title": "ParcelPro",
+    "image": "img3",
+    "description": "A parcel booking system with delivery cost calculator.",
+    "features": [
+      "Parcel booking form with sender/receiver info",
+      "Automatic delivery cost calculation",
+      "Secure data storage with date and time"
+    ],
+    "technologies": ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+    "details": {
+      "techStack": ["React", "Express.js", "MongoDB", "Tailwind CSS"],
+      "longDescription": "ParcelPro is a lightweight courier booking platform that allows users to register parcels, calculate shipping costs instantly, and store all delivery data securely. It’s designed for efficiency and simplicity.",
+      "liveLink": "https://parcelpro-live-site.web.app",
+      "clientRepo": "https://github.com/rjriajul1/parcelpro-client",
+      "challenges": "Creating accurate delivery cost logic and ensuring responsive form UI was tricky with complex nested form data.",
+      "improvements": "Future plans include admin dashboard, SMS notification system, and delivery partner integration."
+    }
+  },
+  {
+    "id": 3,
+    "title": "FoodSaver",
+    "image": "img4",
+    "description": "A platform to donate or request surplus food securely.",
+    "features": [
+      "Food donation request and listing",
+      "Approval system for admins",
+      "User dashboard with request history"
+    ],
+    "technologies": ["React", "Firebase", "Node.js", "Tailwind CSS", "MongoDB"],
+    "details": {
+      "techStack": ["React", "Firebase", "Node.js", "MongoDB", "Tailwind CSS"],
+      "longDescription": "FoodSaver helps people share excess food with those in need. With features like admin approval, donation tracking, and a request dashboard, it simplifies the process of food sharing and reduces waste.",
+      "liveLink": "https://foodsaver-app.web.app",
+      "clientRepo": "https://github.com/rjriajul1/foodsaver-client",
+      "challenges": "Implementing real-time request approval and role-based access for donors and admins was challenging.",
+      "improvements": "Planned features include geolocation-based food pickups, expiration tracking, and SMS notifications for donors."
+    }
+  }
+]
