@@ -3,6 +3,7 @@ import profile from "../../../assets/profile.jpg";
 import { Link } from "react-router";
 import { FaGithub } from "react-icons/fa";
 import { FaSquareFacebook } from "react-icons/fa6";
+import "aos/dist/aos.css";
 const Hero = () => {
   return (
     <div className="hero rounded-2xl max-w-[1600px] mt-8 mx-auto bg-primary">

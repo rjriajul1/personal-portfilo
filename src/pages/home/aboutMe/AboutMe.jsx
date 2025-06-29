@@ -1,8 +1,8 @@
 import React from "react";
-
+import "aos/dist/aos.css";
 const AboutMe = () => {
   return (
-    <section className="bg-white py-16 px-6" id="about">
+    <section data-aos="flip-left" className="bg-white py-16 px-6" id="about">
       <div className="max-w-[1400px] mx-auto">
         <h2 className="text-4xl font-bold text-center text-green-700 mb-8">
           About Me

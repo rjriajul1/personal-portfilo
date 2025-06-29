@@ -11,7 +11,7 @@ const Projects = () => {
       .then((data) => setProjects(data));
   }, []);
   return (
-    <div id="project" className="max-w-[1600px] mx-auto">
+    <div data-aos="fade-left" id="project" className="max-w-[1600px] mx-auto">
       <h1 className="text-4xl font-bold text-center text-green-700 mt-16 mb-8">
         Projects
       </h1>
