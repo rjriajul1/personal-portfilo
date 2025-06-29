@@ -22,40 +22,42 @@
   },
   {
     "id": 2,
-    "title": "ParcelPro",
-    "image": "img3",
-    "description": "A parcel booking system with delivery cost calculator.",
+    "title": "Zero Waste Meals",
+    "image": "https://i.ibb.co/svMg6tGM/Screenshot-2025-06-29-170301.png",
+    "description": "A web-based food donation platform where users can donate extra food, request food, and manage their donations. Built using React, Firebase, MongoDB, Tailwind CSS, and React Router.",
     "features": [
-      "Parcel booking form with sender/receiver info",
-      "Automatic delivery cost calculation",
-      "Secure data storage with date and time"
+      "Add food with details like name, quantity, pickup time, and location.",
+      "View a list of all donated foods.",
+      "Update or delete your own donated food items."
     ],
     "technologies": ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
     "details": {
-      "techStack": ["React", "Express.js", "MongoDB", "Tailwind CSS"],
-      "longDescription": "ParcelPro is a lightweight courier booking platform that allows users to register parcels, calculate shipping costs instantly, and store all delivery data securely. It’s designed for efficiency and simplicity.",
-      "liveLink": "https://parcelpro-live-site.web.app",
-      "clientRepo": "https://github.com/rjriajul1/parcelpro-client",
+      "techStack": ["React", "Express.js", "MongoDB", "Tailwind CSS"," React Router"],
+      "longDescription": "A web-based food donation platform where users can donate extra food, request food, and manage their donations. Built using React, Firebase, MongoDB, Tailwind CSS, and React Router..",
+      "liveLink": "https://food-donar.netlify.app/",
+      "clientRepo": "https://github.com/rjriajul1/zero-waste-meals-client",
+      "serverRepo": "https://github.com/rjriajul1/zero-waste-meals-server",
       "challenges": "Creating accurate delivery cost logic and ensuring responsive form UI was tricky with complex nested form data.",
       "improvements": "Future plans include admin dashboard, SMS notification system, and delivery partner integration."
     }
   },
   {
     "id": 3,
-    "title": "FoodSaver",
-    "image": "img4",
-    "description": "A platform to donate or request surplus food securely.",
+    "title": "Coffee Store",
+    "image": "https://i.ibb.co/PG0Zvd77/Screenshot-2025-06-29-193237.png",
+    "description": "A fully functional Coffee Store web application where users can order their favorite coffee, like them, and manage coffee items (add, update, delete). Built with React and Firebase.",
     "features": [
-      "Food donation request and listing",
-      "Approval system for admins",
-      "User dashboard with request history"
+      "🛒 Order coffee",
+      "❌ Delete coffee with confirmation",
+      "❤️ Like coffee (favorites)"
     ],
     "technologies": ["React", "Firebase", "Node.js", "Tailwind CSS", "MongoDB"],
     "details": {
-      "techStack": ["React", "Firebase", "Node.js", "MongoDB", "Tailwind CSS"],
-      "longDescription": "FoodSaver helps people share excess food with those in need. With features like admin approval, donation tracking, and a request dashboard, it simplifies the process of food sharing and reduces waste.",
-      "liveLink": "https://foodsaver-app.web.app",
-      "clientRepo": "https://github.com/rjriajul1/foodsaver-client",
+      "techStack": ["React", "Firebase", "Node.js", "MongoDB", "Tailwind CSS","React Query (TanStack)"],
+      "longDescription": "A fully functional Coffee Store web application where users can order their favorite coffee, like them, and manage coffee items (add, update, delete). Built with React and Firebase.",
+      "liveLink": "https://coffee-store-auth-13832.web.app/",
+      "clientRepo": "https://github.com/rjriajul1/coffee-store-client",
+      "serverRepo": "https://github.com/rjriajul1/coffee-store-server",
       "challenges": "Implementing real-time request approval and role-based access for donors and admins was challenging.",
       "improvements": "Planned features include geolocation-based food pickups, expiration tracking, and SMS notifications for donors."
     }

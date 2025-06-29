@@ -34,7 +34,7 @@ const Hero = () => {
               <FaGithub className="hover:text-white" size={28} />
             </Link>
           </div>
-          <button className="btn text-xl btn-primary">Resume</button>
+          <Link to="https://docs.google.com/document/d/1rRHc9w-2UwdKTsyJaZTsv8_JkYmUeP51nSvRdTor5qA/edit?usp=sharing" target="_blank"><button className="btn text-xl btn-primary">Resume</button></Link>
         </div>
       </div>
     </div>
