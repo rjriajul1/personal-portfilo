@@ -8,13 +8,16 @@ const Hero = () => {
   return (
     <div className="hero rounded-2xl max-w-[1600px] mt-8 mx-auto bg-primary">
       <div className="hero-content flex-col lg:flex-row-reverse">
-        <img src={profile} className=" w-72 h-72 rounded-full shadow-2xl" />
+        <img
+          src={profile}
+          className=" w-52 h-52 md:w-72 md:h-72  rounded-full shadow-2xl"
+        />
         <div>
-          <h1 className="text-5xl font-bold">
+          <h1 className="md:text-5xl text-2xl font-bold">
             {" "}
             Hi, I'm Riajul Islam
             <br />
-            <span className="text-2xl">
+            <span className="md:text-2xl text-xl">
               {" "}
               Web Developer | MERN Stack Enthusiast | UI Lover
             </span>
@@ -35,7 +38,12 @@ const Hero = () => {
               <FaGithub className="hover:text-white" size={28} />
             </Link>
           </div>
-          <Link to="https://docs.google.com/document/d/1rRHc9w-2UwdKTsyJaZTsv8_JkYmUeP51nSvRdTor5qA/edit?usp=sharing" target="_blank"><button className="btn text-xl btn-primary">Resume</button></Link>
+          <Link
+            to="https://drive.google.com/file/d/1GrXboy1vSXVkzCiqw8gUCOja4gm-NNGl/view"
+            target="_blank"
+          >
+            <button className="btn text-xl btn-primary">Resume</button>
+          </Link>
         </div>
       </div>
     </div>

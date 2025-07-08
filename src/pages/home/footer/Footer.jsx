@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../../assets/logo.png";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
@@ -19,22 +20,22 @@ const Footer = () => {
 
         {/* Social Icons */}
         <div className="flex space-x-6 text-2xl">
-          <a
-            href="https://github.com/rjriajul1"
+          <Link
+            to="https://github.com/rjriajul1"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
           >
             <FaGithub />
-          </a>
-          <a
-            href="https://linkedin.com/in/your-link"
+          </Link>
+          <Link
+            to="https://www.linkedin.com/in/riajul-karim"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
           >
             <FaLinkedin />
-          </a>
+          </Link>
           <a href="mailto:riajul.karim52@gmail.com" aria-label="Email">
             <FaEnvelope />
           </a>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Carousel } from "react-responsive-carousel";
 import Project from "../project/Project";
 
 const Projects = () => {
@@ -11,8 +10,8 @@ const Projects = () => {
       .then((data) => setProjects(data));
   }, []);
   return (
-    <div data-aos="fade-left" id="project" className="max-w-[1600px] mx-auto">
-      <h1 className="text-4xl font-bold text-center text-green-700 mt-16 mb-8">
+    <div id="project" className="max-w-[1600px] py-25 mx-auto">
+      <h1 className="text-4xl font-bold text-center text-green-700 mt-16 mb-10">
         Projects
       </h1>
       <div className="flex flex-col gap-8">
