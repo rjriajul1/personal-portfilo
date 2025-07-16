@@ -40,7 +40,7 @@ const AboutMe = () => {
           variants={fadeInUp}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.50 }}
+          viewport={{ once: false, amount: 0.5 }}
           className="text-4xl md:text-5xl font-bold text-center text-white mb-6"
         >
           About Me
@@ -64,7 +64,7 @@ const AboutMe = () => {
           variants={fadeInUp}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.50 }}
+          viewport={{ once: false, amount: 0.5 }}
           className="rounded-2xl shadow-xl shadow-primary/10 bg-[#1A1A1A] p-8 md:p-12 lg:p-16 space-y-6 text-lg leading-relaxed"
         >
           <p>
