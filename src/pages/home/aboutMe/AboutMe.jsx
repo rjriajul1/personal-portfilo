@@ -2,13 +2,13 @@ import React from "react";
 // import "aos/dist/aos.css";
 const AboutMe = () => {
   return (
-    <section className="bg-white py-25" id="about">
+    <section className=" py-25" id="about">
       <div className="">
-        <h2 className="text-4xl font-bold text-center text-green-700 mb-10">
+        <h2 className="text-4xl font-bold text-center  mb-10">
           About Me
         </h2>
-        <div className="max-w-[1600px] mx-auto bg-green-50 rounded-2xl shadow-md">
-          <div className="  p-8 md:px-15 lg:p-20 space-y-4 text-gray-800 text-lg leading-relaxed">
+        <div className="max-w-[1600px] mx-auto  rounded-2xl shadow-md">
+          <div className="  p-8 md:px-15 lg:p-20 space-y-4 text-lg leading-relaxed">
             <p>
               I'm{" "}
               <span className="font-semibold text-green-700">Riajul Islam</span>
