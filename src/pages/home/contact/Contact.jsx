@@ -66,7 +66,7 @@ const Contact = () => {
         className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-10"
       >
         {/* Contact Info */}
-        <div className="flex flex-col gap-6 p-8 rounded-2xl bg-white shadow-lg border border-primary/20">
+        <div className="flex  flex-col gap-6 p-8 rounded-2xl bg-white shadow-lg border border-primary/20">
           <h3 className="text-2xl font-semibold mb-4 text-primary">Contact Info</h3>
 
           <div className="flex items-center gap-4 text-primary">
@@ -126,7 +126,7 @@ const Contact = () => {
             placeholder="Your Message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="textarea textarea-bordered w-full mb-6 focus:outline-primary focus:ring-2 focus:ring-primary transition"
+            className="textarea textarea-bordered w-full mb-6 focus:outline-primary focus:ring-2 focus:ring-primary transition resize-none"
             required
           ></textarea>
 
