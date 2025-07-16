@@ -1,129 +1,273 @@
-import React from "react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaGithub, FaExternalLinkAlt, FaServer, FaTimes } from "react-icons/fa";
+import Tilt from "react-parallax-tilt";
 import { Link } from "react-router";
-import Modal from "react-modal";
-const Project = ({ project }) => {
-  const { title, image, technologies, features, description, details } =
-    project || {};
 
-  const customStyles = {
-    content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
+const Project = ({ project }) => {
+ 
+  const {
+    title,
+    image ,
+    description,
+    features,
+    technologies,
+    details = {},
+  } = project || {};
+
+
+ 
+  const {
+    liveLink,
+    clientRepo,
+    serverRepo,
+    techStack = [],
+    longDescription = "",
+    challenges = "",
+    improvements = "",
+    screenshots = [], 
+  } = details || {};
+
+  const [isOpen, setIsOpen] = useState(false);
+
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2 },
     },
   };
-  //   Modal.setAppElement("#yourAppElement");
-  let subtitle;
-  const [modalIsOpen, setIsOpen] = React.useState(false);
 
-  function openModal() {
-    setIsOpen(true);
-  }
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = "#f00";
-  }
+  const imageVariants = {
+    hidden: { opacity: 0, x: -100 },
+    show: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
 
-  function closeModal() {
-    setIsOpen(false);
-  }
+  const contentVariants = {
+    hidden: { opacity: 0, x: 100 },
+    show: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
+  
+  const hoverShadow = "0 12px 32px rgba(0,0,0,0.6)";
+
   return (
-    <div className="hero bg-primary rounded-2xl ">
-      <div className="hero-content flex-col gap-8 lg:flex-row">
-        <img
-          src={image}
-          className=" md:max-w-[500px]  mx-auto rounded-2xl shadow-2xl"
-        />
-        <div>
-          <h1 className="text-5xl font-bold">{title}</h1>
-          <p className="py-6">{description}</p>
+    <>
+      <Tilt tiltMaxAngleX={8} tiltMaxAngleY={8} scale={1.02}>
+        <motion.article
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.4 }}
+          whileHover={{ scale: 1.02, boxShadow: hoverShadow }}
+          transition={{ type: "spring", stiffness: 200, damping: 20 }}
+          className="group relative bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl shadow-lg border border-white/20 transition-all duration-300 p-6 flex flex-col md:flex-row gap-6 items-center"
+        >
+         
+          <motion.div variants={imageVariants} className="md:w-1/2 overflow-hidden rounded-xl">
+            <motion.img
+              src={image}
+              alt={title}
+              className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+          </motion.div>
 
-          {features?.map((feature, index) => (
-            <li key={index}>{feature}</li>
-          ))}
+          <motion.div variants={contentVariants} className="md:w-1/2 text-left">
+            <h2 className="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors duration-300">
+              {title}
+            </h2>
+            {description && (
+              <p className="text-white text-sm mb-3">{description}</p>
+            )}
 
-          <div className="flex gap-6 flex-wrap py-6">
-            {technologies?.map((tech, index) => (
-              <button key={index} className="btn btn-accent text-white">
-                {tech}
-              </button>
-            ))}
-          </div>
+            {features.length > 0 && (
+              <ul className="list-disc list-inside text-white text-sm mb-3">
+                {features.map((f, i) => (
+                  <li key={i}>{f}</li>
+                ))}
+              </ul>
+            )}
 
-          <div className="flex gap-6 flex-wrap">
-            <Link to={details.liveLink} target="_blank">
-              <button className="btn  text-black btn-primary">live</button>
-            </Link>
-            <Link to={details.clientRepo} target="_blank">
-              <button className="btn  text-black btn-primary">
-                Client side
+            {technologies.length > 0 && (
+              <div className="flex flex-wrap gap-2 mb-4">
+                {technologies.map((tech, idx) => (
+                  <span key={idx} className="badge badge-outline badge-accent text-xs">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            <div className="flex flex-wrap gap-3">
+              {liveLink && (
+                <Link
+                  to={liveLink}
+                  target="_blank"
+                  className="btn btn-primary btn-sm flex items-center gap-1"
+                >
+                  Live <FaExternalLinkAlt />
+                </Link>
+              )}
+              {clientRepo && (
+                <Link
+                  to={clientRepo}
+                  target="_blank"
+                  className="btn btn-outline btn-sm flex items-center gap-1"
+                >
+                  Client <FaGithub />
+                </Link>
+              )}
+              {serverRepo && (
+                <Link
+                  to={serverRepo}
+                  target="_blank"
+                  className="btn btn-outline btn-sm flex items-center gap-1"
+                >
+                  Server <FaServer />
+                </Link>
+              )}
+              <button onClick={() => setIsOpen(true)} className="btn btn-primary btn-sm">
+                Details
               </button>
-            </Link>
-            <Link to={details?.serverRepo} target="_blank">
-              <button className="btn  text-black btn-primary">
-                Server Side
-              </button>
-            </Link>
-            <button onClick={openModal} className="btn  text-black btn-primary">
-              Details
-            </button>
-            <Modal
-              isOpen={modalIsOpen}
-              onAfterOpen={afterOpenModal}
-              onRequestClose={closeModal}
-              style={customStyles}
-              contentLabel="Example Modal"
+            </div>
+          </motion.div>
+        </motion.article>
+      </Tilt>
+
+      {/* Modal */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[999] flex items-center justify-center"
+          >
+         
+            <motion.div
+              onClick={() => setIsOpen(false)}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-black/70"
+            />
+
+         
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 200, damping: 20 }}
+              className="relative z-10 w-[90%] max-w-3xl max-h-[80vh] overflow-y-auto rounded-2xl bg-base-100 dark:bg-neutral-900 p-8 text-left shadow-2xl"
             >
-              <h2 className="text-2xl font-bold mb-4">
-                {project.title} Details
-              </h2>
-              <p className="mb-3">
-                <strong>Tech Stack:</strong>{" "}
-                {project.details.techStack.join(", ")}
-              </p>
-              <p className="mb-3">
-                <strong>Description:</strong> {project.details.longDescription}
-              </p>
-              <p>
-                <strong>Live Site:</strong>{" "}
-                <a
-                  href={project.details.liveLink}
-                  target="_blank"
-                  className="text-blue-500 underline"
-                >
-                  Visit
-                </a>
-              </p>
-              <p>
-                <strong>GitHub (Client):</strong>{" "}
-                <a
-                  href={project.details.clientRepo}
-                  target="_blank"
-                  className="text-blue-500 underline"
-                >
-                  View Code
-                </a>
-              </p>
-              <p className="mt-3">
-                <strong>Challenges:</strong> {project.details.challenges}
-              </p>
-              <p className="mb-3">
-                <strong>Improvements:</strong> {project.details.improvements}
-              </p>
               <button
-                className="btn btn-primary text-black"
-                onClick={closeModal}
+                onClick={() => setIsOpen(false)}
+                className="btn btn-sm btn-circle btn-error absolute top-4 right-4"
               >
-                close
+                <FaTimes />
               </button>
-            </Modal>
-          </div>
-        </div>
-      </div>
-    </div>
+
+           
+              <h2 className="text-2xl font-bold mb-4 text-primary">{title} Details</h2>
+
+              {/* {screenshots.length > 0 && (
+                <div className="flex gap-4 overflow-x-auto pb-4 mb-6">
+                  {screenshots.map((src, i) => (
+                    <img
+                      key={i}
+                      src={src}
+                      alt={`${title} screenshot ${i + 1}`}
+                      className="h-40 rounded-lg object-cover flex-shrink-0"
+                    />
+                  ))}
+                </div>
+              )} */}
+
+         
+              {longDescription && (
+                <p className="mb-6 text-base-content/80 leading-relaxed">{longDescription}</p>
+              )}
+
+          
+              {features.length > 0 && (
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold mb-2 text-base-content">Key Features</h3>
+                  <ul className="list-disc list-inside space-y-1 text-base-content/80">
+                    {features.map((f, i) => (
+                      <li key={i}>{f}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+       
+              {techStack.length > 0 && (
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold mb-2 text-base-content">Tech Stack</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {techStack.map((t, i) => (
+                      <span key={i} className="badge badge-outline badge-primary">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {challenges && (
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold mb-2 text-base-content">Challenges</h3>
+                  <p className="text-base-content/80 whitespace-pre-line">{challenges}</p>
+                </div>
+              )}
+
+
+              {improvements && (
+                <div className="mb-8">
+                  <h3 className="text-lg font-semibold mb-2 text-base-content">Improvements</h3>
+                  <p className="text-base-content/80 whitespace-pre-line">{improvements}</p>
+                </div>
+              )}
+
+              {/* Links */}
+              <div className="mt-4 flex flex-wrap gap-3">
+                {liveLink && (
+                  <Link
+                    to={liveLink}
+                    target="_blank"
+                    
+                    className="btn btn-primary btn-sm flex items-center gap-1"
+                  >
+                    Live <FaExternalLinkAlt />
+                  </Link>
+                )}
+                {clientRepo && (
+                  <Link
+                    to={clientRepo}
+                    target="_blank"
+            
+                    className="btn btn-outline btn-sm flex items-center gap-1"
+                  >
+                    Client <FaGithub />
+                  </Link>
+                )}
+                {serverRepo && (
+                  <Link
+                    to={serverRepo}
+                    target="_blank"
+                    
+                    className="btn btn-outline btn-sm flex items-center gap-1"
+                  >
+                    Server <FaServer />
+                  </Link>
+                )}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 

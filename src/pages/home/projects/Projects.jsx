@@ -11,7 +11,7 @@ const Projects = () => {
   }, []);
   return (
     <div id="project" className="max-w-[1600px] py-25 mx-auto">
-      <h1 className="text-4xl font-bold text-center text-green-700 mt-16 mb-10">
+      <h1 className="text-5xl font-bold text-center mt-16 mb-14">
         Projects
       </h1>
       <div className="flex flex-col gap-8">
