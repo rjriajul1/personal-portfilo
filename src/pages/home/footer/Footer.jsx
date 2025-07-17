@@ -4,8 +4,6 @@ import {
   FaGithub,
   FaLinkedin,
   FaEnvelope,
-  FaFacebook,
-  FaTwitter,
   FaPhone,
   FaMapMarkerAlt,
 } from "react-icons/fa";
@@ -17,7 +15,6 @@ const Footer = () => {
 
   return (
     <footer className="bg-neutral text-neutral-content pt-16 pb-10 mt-24 relative overflow-hidden">
-    
       <span className="pointer-events-none absolute -top-10 -left-10 w-40 h-60 rounded-full bg-primary/50 blur-3xl" />
       <span className="pointer-events-none absolute bottom-0 right-0 w-52 h-52 rounded-full bg-primary/50 blur-3xl" />
 
@@ -99,37 +96,37 @@ const Footer = () => {
         {/* Social Icons */}
         <div className="flex flex-col items-center md:items-start space-y-4">
           <h3 className="text-lg font-semibold">Follow Me</h3>
-           <div className="flex gap-5">
-                      {/* Facebook */}
-                      <Link
-                        to="https://www.facebook.com/share/1JHcRoWsFS/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-gray-800 p-4 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-primary hover:scale-110"
-                      >
-                        <FaSquareFacebook size={26} color="white" />
-                      </Link>
-          
-                      {/* GitHub */}
-                      <Link
-                        to="https://github.com/rjriajul1"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-gray-800 p-4 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-primary hover:scale-110"
-                      >
-                        <FaGithub size={26} color="white" />
-                      </Link>
-          
-                      {/* LinkedIn */}
-                      <Link
-                        to="https://www.linkedin.com/in/riajul-karim"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-gray-800 p-4 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-primary hover:scale-110"
-                      >
-                        <FaLinkedin size={26} color="white" />
-                      </Link>
-                    </div>
+          <div className="flex gap-5">
+            {/* Facebook */}
+            <Link
+              to="https://www.facebook.com/share/1JHcRoWsFS/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-800 p-4 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-primary hover:scale-110"
+            >
+              <FaSquareFacebook size={26} color="white" />
+            </Link>
+
+            {/* GitHub */}
+            <Link
+              to="https://github.com/rjriajul1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-800 p-4 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-primary hover:scale-110"
+            >
+              <FaGithub size={26} color="white" />
+            </Link>
+
+            {/* LinkedIn */}
+            <Link
+              to="https://www.linkedin.com/in/riajul-karim"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-800 p-4 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-primary hover:scale-110"
+            >
+              <FaLinkedin size={26} color="white" />
+            </Link>
+          </div>
         </div>
       </div>
 

@@ -37,12 +37,12 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="mt-8 flex justify-center lg:justify-start gap-4">
             {/* Primary CTA */}
-            <Link
-              to="#contact"
+            <a
+              href="#contact"
               className="bg-primary text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-transparent hover:border-2 hover:border-primary hover:text-primary"
             >
               Hire Me
-            </Link>
+            </a>
 
             {/* Secondary CTA */}
             <Link target="_blank"

@@ -158,16 +158,10 @@ const AboutMe = () => {
           className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link
-            href="#projects"
+            to="/"
             className="btn btn-primary rounded-full px-8 transition-all duration-300 hover:bg-transparent hover:border-2 hover:border-primary hover:text-primary"
           >
             View My Work
-          </Link>
-          <Link
-            to="#contact"
-            className="btn btn-outline rounded-full px-8 border-primary text-primary hover:bg-primary hover:text-white"
-          >
-            Contact Me
           </Link>
         </motion.div>
       </div>
