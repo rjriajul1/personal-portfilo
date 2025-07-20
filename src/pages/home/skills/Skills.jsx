@@ -108,7 +108,7 @@ const Skills = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="mb-12 text-center">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            MERN Stack <span className="text-blue-400">Skills</span>
+            MERN Stack <span className="text-primary">Skills</span>
           </h2>
           <p className="mt-3 max-w-xl mx-auto text-sm md:text-base text-zinc-400">
             Frontend & Backend capability visualized with animated progress bars.

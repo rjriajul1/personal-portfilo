@@ -20,6 +20,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-fast-marquee": "^1.6.5",
+    "react-github-calendar": "^4.5.9",
     "react-gradient": "^1.0.2",
     "react-gradient-animation": "^1.0.9",
     "react-hot-toast": "^2.5.2",
