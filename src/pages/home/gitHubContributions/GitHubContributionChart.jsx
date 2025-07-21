@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 
 const AnimatedGitHubContributionChart = () => {
   const wrapRef = useRef(null);
-  const inView = useInView(wrapRef, { once: true, margin: "-100px" });
+  const inView = useInView(wrapRef, { once: false, margin: "-100px" });
   const [selected, setSelected] = useState(null);
   const [blockSize, setBlockSize] = useState(15);
 

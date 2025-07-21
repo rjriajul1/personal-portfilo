@@ -5,18 +5,15 @@ import Tilt from "react-parallax-tilt";
 import { Link } from "react-router";
 
 const Project = ({ project }) => {
- 
   const {
     title,
-    image ,
+    image,
     description,
-    features,
-    technologies,
+    features = [],
+    technologies = [],
     details = {},
   } = project || {};
 
-
- 
   const {
     liveLink,
     clientRepo,
@@ -25,11 +22,9 @@ const Project = ({ project }) => {
     longDescription = "",
     challenges = "",
     improvements = "",
-    screenshots = [], 
   } = details || {};
 
   const [isOpen, setIsOpen] = useState(false);
-
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -49,7 +44,6 @@ const Project = ({ project }) => {
     show: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
   };
 
-  
   const hoverShadow = "0 12px 32px rgba(0,0,0,0.6)";
 
   return (
@@ -62,27 +56,35 @@ const Project = ({ project }) => {
           viewport={{ once: false, amount: 0.4 }}
           whileHover={{ scale: 1.02, boxShadow: hoverShadow }}
           transition={{ type: "spring", stiffness: 200, damping: 20 }}
-          className="group relative bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl shadow-lg border border-white/20 transition-all duration-300 p-6 flex flex-col md:flex-row gap-6 items-center"
+          className="group relative bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl shadow-lg border border-white/20 transition-all duration-300 p-4 sm:p-6 flex flex-col lg:flex-row gap-4 sm:gap-6 items-center w-full"
         >
-         
-          <motion.div variants={imageVariants} className="md:w-1/2 overflow-hidden rounded-xl">
+          {/* Image */}
+          <motion.div
+            variants={imageVariants}
+            className="w-full lg:w-1/2 overflow-hidden rounded-xl"
+          >
             <motion.img
               src={image}
               alt={title}
-              className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+              className="w-full h-48 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-110"
             />
           </motion.div>
 
-          <motion.div variants={contentVariants} className="md:w-1/2 text-left">
-            <h2 className="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors duration-300">
+          {/* Content */}
+          <motion.div
+            variants={contentVariants}
+            className="w-full lg:w-1/2 text-left"
+          >
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors duration-300">
               {title}
             </h2>
+
             {description && (
-              <p className="text-white text-sm mb-3">{description}</p>
+              <p className="text-white text-sm sm:text-base mb-3">{description}</p>
             )}
 
             {features.length > 0 && (
-              <ul className="list-disc list-inside text-white text-sm mb-3">
+              <ul className="list-disc list-inside text-white text-sm sm:text-base mb-3">
                 {features.map((f, i) => (
                   <li key={i}>{f}</li>
                 ))}
@@ -92,14 +94,17 @@ const Project = ({ project }) => {
             {technologies.length > 0 && (
               <div className="flex flex-wrap gap-2 mb-4">
                 {technologies.map((tech, idx) => (
-                  <span key={idx} className="badge badge-outline badge-accent text-xs">
+                  <span
+                    key={idx}
+                    className="badge badge-outline badge-accent text-xs sm:text-sm"
+                  >
                     {tech}
                   </span>
                 ))}
               </div>
             )}
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2 sm:gap-3">
               {liveLink && (
                 <Link
                   to={liveLink}
@@ -127,7 +132,10 @@ const Project = ({ project }) => {
                   Server <FaServer />
                 </Link>
               )}
-              <button onClick={() => setIsOpen(true)} className="btn btn-primary btn-sm">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="btn btn-primary btn-sm"
+              >
                 Details
               </button>
             </div>
@@ -144,7 +152,6 @@ const Project = ({ project }) => {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[999] flex items-center justify-center"
           >
-         
             <motion.div
               onClick={() => setIsOpen(false)}
               initial={{ opacity: 0 }}
@@ -153,47 +160,36 @@ const Project = ({ project }) => {
               className="absolute inset-0 bg-black/70"
             />
 
-         
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ type: "spring", stiffness: 200, damping: 20 }}
-              className="relative z-10 w-[90%] max-w-3xl max-h-[80vh] overflow-y-auto rounded-2xl bg-base-100 dark:bg-neutral-900 p-8 text-left shadow-2xl"
+              className="relative z-10 w-[95%] sm:w-[90%] max-w-3xl max-h-[80vh] overflow-y-auto rounded-2xl bg-base-100 dark:bg-neutral-900 p-4 sm:p-8 text-left shadow-2xl"
             >
               <button
                 onClick={() => setIsOpen(false)}
-                className="btn btn-sm btn-circle btn-error absolute top-4 right-4"
+                className="btn btn-sm btn-circle btn-error absolute top-3 right-3"
               >
                 <FaTimes />
               </button>
 
-           
-              <h2 className="text-2xl font-bold mb-4 text-primary">{title} Details</h2>
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 text-primary">
+                {title} Details
+              </h2>
 
-              {/* {screenshots.length > 0 && (
-                <div className="flex gap-4 overflow-x-auto pb-4 mb-6">
-                  {screenshots.map((src, i) => (
-                    <img
-                      key={i}
-                      src={src}
-                      alt={`${title} screenshot ${i + 1}`}
-                      className="h-40 rounded-lg object-cover flex-shrink-0"
-                    />
-                  ))}
-                </div>
-              )} */}
-
-         
               {longDescription && (
-                <p className="mb-6 text-base-content/80 leading-relaxed">{longDescription}</p>
+                <p className="mb-6 text-base-content/80 text-sm sm:text-base leading-relaxed">
+                  {longDescription}
+                </p>
               )}
 
-          
               {features.length > 0 && (
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold mb-2 text-base-content">Key Features</h3>
-                  <ul className="list-disc list-inside space-y-1 text-base-content/80">
+                  <h3 className="text-lg font-semibold mb-2 text-base-content">
+                    Key Features
+                  </h3>
+                  <ul className="list-disc list-inside space-y-1 text-base-content/80 text-sm sm:text-base">
                     {features.map((f, i) => (
                       <li key={i}>{f}</li>
                     ))}
@@ -201,13 +197,17 @@ const Project = ({ project }) => {
                 </div>
               )}
 
-       
               {techStack.length > 0 && (
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold mb-2 text-base-content">Tech Stack</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-base-content">
+                    Tech Stack
+                  </h3>
                   <div className="flex flex-wrap gap-2">
                     {techStack.map((t, i) => (
-                      <span key={i} className="badge badge-outline badge-primary">
+                      <span
+                        key={i}
+                        className="badge badge-outline badge-primary"
+                      >
                         {t}
                       </span>
                     ))}
@@ -217,26 +217,32 @@ const Project = ({ project }) => {
 
               {challenges && (
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold mb-2 text-base-content">Challenges</h3>
-                  <p className="text-base-content/80 whitespace-pre-line">{challenges}</p>
+                  <h3 className="text-lg font-semibold mb-2 text-base-content">
+                    Challenges
+                  </h3>
+                  <p className="text-base-content/80 whitespace-pre-line">
+                    {challenges}
+                  </p>
                 </div>
               )}
 
-
               {improvements && (
                 <div className="mb-8">
-                  <h3 className="text-lg font-semibold mb-2 text-base-content">Improvements</h3>
-                  <p className="text-base-content/80 whitespace-pre-line">{improvements}</p>
+                  <h3 className="text-lg font-semibold mb-2 text-base-content">
+                    Improvements
+                  </h3>
+                  <p className="text-base-content/80 whitespace-pre-line">
+                    {improvements}
+                  </p>
                 </div>
               )}
 
               {/* Links */}
-              <div className="mt-4 flex flex-wrap gap-3">
+              <div className="mt-4 flex flex-wrap gap-2 sm:gap-3">
                 {liveLink && (
                   <Link
                     to={liveLink}
                     target="_blank"
-                    
                     className="btn btn-primary btn-sm flex items-center gap-1"
                   >
                     Live <FaExternalLinkAlt />
@@ -246,7 +252,6 @@ const Project = ({ project }) => {
                   <Link
                     to={clientRepo}
                     target="_blank"
-            
                     className="btn btn-outline btn-sm flex items-center gap-1"
                   >
                     Client <FaGithub />
@@ -256,7 +261,6 @@ const Project = ({ project }) => {
                   <Link
                     to={serverRepo}
                     target="_blank"
-                    
                     className="btn btn-outline btn-sm flex items-center gap-1"
                   >
                     Server <FaServer />
