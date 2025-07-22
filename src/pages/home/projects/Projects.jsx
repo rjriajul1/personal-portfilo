@@ -14,7 +14,7 @@ const Projects = () => {
       <h1 className="text-5xl font-bold text-center mt-16 mb-14">
         Projects
       </h1>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-7">
         {projects?.map((project) => (
           <Project key={project.id} project={project}></Project>
         ))}
