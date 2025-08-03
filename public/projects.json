@@ -43,23 +43,23 @@
   },
   {
     "id": 3,
-    "title": "Coffee Store",
-    "image": "https://i.ibb.co/PG0Zvd77/Screenshot-2025-06-29-193237.png",
-    "description": "A fully functional Coffee Store web application where users can order their favorite coffee, like them, and manage coffee items (add, update, delete). Built with React and Firebase.",
+    "title": "Apartment Management System",
+    "image": "https://i.ibb.co/21JD1pH0/Screenshot-2025-08-03-212220.png",
+    "description": "A modern web application for managing apartment-related tasks such as rent collection, agreements, announcements, member management, and more.",
     "features": [
-      "🛒 Order coffee",
-      "❌ Delete coffee with confirmation",
-      "❤️ Like coffee (favorites)"
+      "Agreement Management – Users can request agreements; admins can approve/manage them.",
+      "Rent Payment with History – Secure monthly rent payments via Stripe with full history tracking.",
+      "Announcement System – Admins post announcements; users can view all active notices."
     ],
-    "technologies": ["React", "Firebase", "Node.js", "Tailwind CSS", "MongoDB"],
+    "technologies": ["React", "Firebase", "Node.js", "Tailwind CSS", "MongoDB", "Stripe.js","Leaflet.js"],
     "details": {
-      "techStack": ["React", "Firebase", "Node.js", "MongoDB", "Tailwind CSS","React Query (TanStack)"],
-      "longDescription": "A fully functional Coffee Store web application where users can order their favorite coffee, like them, and manage coffee items (add, update, delete). Built with React and Firebase.",
-      "liveLink": "https://coffee-store-auth-13832.web.app/",
-      "clientRepo": "https://github.com/rjriajul1/coffee-store-client",
-      "serverRepo": "https://github.com/rjriajul1/coffee-store-server",
-      "challenges": "Implementing real-time request approval and role-based access for donors and admins was challenging.",
-      "improvements": "Planned features include geolocation-based food pickups, expiration tracking, and SMS notifications for donors."
+      "techStack": ["React", "Firebase", "Node.js", "MongoDB", "Tailwind CSS","React Query (TanStack)","Stripe.js","Leaflet.js"],
+      "longDescription": "The Apartment Management System offers a seamless experience for both admins and residents by focusing on three core features. Users can conveniently request and manage rental agreements, pay monthly rent securely via Stripe with complete payment history access, and stay informed through a centralized announcement system where admins can publish important updates. These features together ensure a smooth, transparent, and efficient apartment living experience.",
+      "liveLink": "https://apartment-management-system.netlify.app/",
+      "clientRepo": "https://github.com/rjriajul1/apartment-client",
+      "serverRepo": "https://github.com/rjriajul1/apartment-server",
+      "challenges": "Handling real-time updates (like rent status or new announcements) without refreshing the page.",
+      "improvements": "Implement WebSocket or Firebase Realtime Database to enable live updates for better user experience."
     }
   }
 ]
